@@ -5,16 +5,13 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "operation")
-public class Operation {
+public abstract class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime date;
     private double montant;
     private String motif;
-
-    @ManyToOne
-    private Compte compte;
 
     // Getters et setters
     public Operation() {
@@ -48,14 +45,6 @@ public class Operation {
 
     public void setMotif(String motif) {
         this.motif = motif;
-    }
-
-    public Compte getCompte() {
-        return compte;
-    }
-
-    public void setCompte(Compte compte) {
-        this.compte = compte;
     }
 
 }

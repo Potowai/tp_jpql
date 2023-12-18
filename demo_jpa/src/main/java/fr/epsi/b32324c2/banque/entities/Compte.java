@@ -6,16 +6,17 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type_compte", discriminatorType = DiscriminatorType.STRING)
+@Table(name = "compte")
 public abstract class Compte {
     @Id
     private String numero;
     private double solde;
 
-    @ManyToOne
-    private Banque banque;
-
     @OneToMany(mappedBy = "compte")
     private List<Operation> operations;
+
+    @ManyToOne
+    private Client client;
 
     // Getters et setters
     public Compte() {
@@ -35,14 +36,6 @@ public abstract class Compte {
 
     public double getSolde() {
         return solde;
-    }
-
-    public void setBanque(Banque banque) {
-        this.banque = banque;
-    }
-
-    public Banque getBanque() {
-        return banque;
     }
 
     public void setOperations(List<Operation> operations) {
