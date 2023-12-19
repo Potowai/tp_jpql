@@ -1,8 +1,10 @@
 package fr.epsi.b32324c2.banque.entities;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Table;
 
 @Embeddable
+@Table(name = "adresse")
 public class Adresse {
     private int numero;
     private String rue;

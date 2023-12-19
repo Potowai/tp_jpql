@@ -39,4 +39,19 @@ public class Banque {
     public void setClients(List<Client> clients) {
         this.clients = clients;
     }
+
+    public void addClient(Client client) {
+        clients.add(client);
+    }
+
+    public void removeClient(Client client) {
+        clients.remove(client);
+    }
+    @Override
+    public String toString() {
+        return "Banque{" +
+                "nom='" + nom + '\'' +
+                ", clients=" + clients +
+                '}';
+    }
 }

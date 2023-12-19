@@ -50,8 +50,9 @@ public class Main {
             em.persist(client);
             em.persist(livretA);
             em.persist(operation);
-
+            System.out.println("Persisted");
             em.getTransaction().commit();
+            System.out.println("Committed");
         } catch (Exception e) {
             em.getTransaction().rollback();
             e.printStackTrace();
