@@ -29,7 +29,7 @@
         <class>fr.epsi.b32324c2.banque.entities.Operation</class>
         <class>fr.epsi.b32324c2.banque.entities.Client</class>
         <class>fr.epsi.b32324c2.banque.entities.Adresse</class>
-
+        <class>fr.epsi.b32324c2.banque.entities.Virement</class>
         <properties>
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mariadb://bkafr8ahtvlbspxkyqx7-mysql.services.clever-cloud.com:3306/bkafr8ahtvlbspxkyqx7"/>

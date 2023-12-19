@@ -24,5 +24,4 @@ public class LivretA extends Compte {
         this.taux = taux;
     }
 
-
 }

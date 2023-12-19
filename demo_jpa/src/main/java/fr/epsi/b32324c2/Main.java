@@ -38,15 +38,13 @@ public class Main {
             livretA.setNumero("LA123456");
             livretA.setSolde(1000.0);
             livretA.setTaux(0.75);
-            livretA.setBanque(banque);
 
             // Création d'une opération
-            Operation operation = new Operation();
+            Virement operation = new Virement();
             operation.setDate(LocalDateTime.now());
             operation.setMontant(200.0);
             operation.setMotif("Dépôt initial");
-            operation.setCompte(livretA);
-
+            operation.setBeneficiaire("ALEXIS");
             // Persistance des entités
             em.persist(banque);
             em.persist(client);

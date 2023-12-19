@@ -19,7 +19,8 @@ public class Client {
 
     @OneToMany(mappedBy = "client")
     private List<Compte> comptes;
-
+    @ManyToOne()
+    private Banque banque;
     // Getters et setters
     public Client() {
     }
