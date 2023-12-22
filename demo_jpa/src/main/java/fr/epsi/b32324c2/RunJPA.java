@@ -7,22 +7,26 @@ import java.util.List;
 
 public class RunJPA {
     public static void main(String[] args) {
+        Main.main(args);
+        // Create the EntityManagerFactory
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("banque");
         EntityManager em = emf.createEntityManager();
-        EntityTransaction transaction = em.getTransaction();
-        transaction.begin();
-        System.out.println("EntityManager isOpen() : " + em.isOpen()); // Connect to the database
-        System.out.println("Query de select sur la table banque");
-        TypedQuery query = em.createQuery("SELECT b FROM Banque b", Banque.class);
-        System.out.println("Récupération du résultat");
-        List<Banque> banques = query.getResultList();
-        System.out.println("Affichage du résultat");
-        for (Banque banque : banques) {
-            System.out.println(banque.getNom());
+        try{
+            System.out.println("EntityManager isOpen() : " + em.isOpen()); // Connect to the database
+            Banque mybanque = em.find(Banque.class, "BanqueXYZ");
+            System.out.println("Affichage du résultat");
+            if (mybanque != null) {
+                System.out.println(mybanque);
+            } else {
+                System.out.println("Aucun résultat");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            em.close();
+            emf.close();
+            System.out.println("EntityManager closed");
         }
-        transaction.commit();
-        em.close();
-        emf.close();
-        System.out.println("EntityManager closed");
+
     }
 }

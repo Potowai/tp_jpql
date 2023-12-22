@@ -34,12 +34,12 @@
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mariadb://bkafr8ahtvlbspxkyqx7-mysql.services.clever-cloud.com:3306/bkafr8ahtvlbspxkyqx7"/>
             <property name="javax.persistence.jdbc.user" value="ue8upicmllff670t"/>
-            <property name="javax.persistence.jdbc.password" value="HY62UHSyEyNnqvFe19Qv"/>
+            <property name="javax.persistence.jdbc.password" value="P7nh2Ubnf2xG11OBpP36"/>
             <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+<!--            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
             <property name="hibernate.archive.autodetection" value="" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
 
